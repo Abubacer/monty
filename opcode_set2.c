@@ -43,7 +43,7 @@ void pstr_opcode(stack_t **stack, unsigned int line_number)
 
 	current_node = *stack;
 
-	while (current_node != NULL && current_node->n == 0
+	while (current_node != NULL && current_node->n != 0
 		&& current_node->n >= 0 && current_node->n <= 127)
 	{
 		if (current_node->n == 32 ||
@@ -90,6 +90,7 @@ void rotl_opcode(stack_t **stack, unsigned int line_number)
 		*stack = second_top;
 		second_top->prev = NULL;
 	}
+
 	(void)line_number;
 }
 /**
@@ -104,7 +105,7 @@ void rotr_opcode(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top;
 
-	if (*stack == NULL && (*stack)->next != NULL)
+	if (*stack != NULL && (*stack)->next != NULL)
 	{
 		top = *stack;
 
@@ -117,6 +118,6 @@ void rotr_opcode(stack_t **stack, unsigned int line_number)
 		(*stack)->next = NULL;
 		top->prev = NULL;
 	}
+
 	(void)line_number;
 }
-

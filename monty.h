@@ -21,7 +21,7 @@
 #define DIV_ZERO_ERROR "L%d: division by zero\n"
 #define MUL_ERROR "L%d: can't mul, stack too short\n"
 #define MOD_ERROR "L%d: can't mod, stack too short\n"
-#define PCHAR_ERROR "L%d: can't pchar, stack empty\n"
+#define PCHAR_ERROR "L%d:can't pchar, stack empty\n"
 #define OUTRANGE_ERROR "L%d: can't pchar, value out of range\n"
 
 /**
