@@ -101,6 +101,10 @@ instruct_func get_opcode_func(char *str)
 		{"swap", swap_opcode},
 		{"add", add_opcode},
 		{"nop", nop_opcode},
+		{"sub", sub_opcode},
+		{"div", div_opcode},
+		{"mul", mul_opcode},
+		{"mod", mod_opcode},
 		{NULL, NULL},
 	};
 
