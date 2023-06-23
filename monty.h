@@ -21,6 +21,8 @@
 #define DIV_ZERO_ERROR "L%d: division by zero\n"
 #define MUL_ERROR "L%d: can't mul, stack too short\n"
 #define MOD_ERROR "L%d: can't mod, stack too short\n"
+#define PCHAR_ERROR "L%d: can't pchar, stack empty\n"
+#define OUTRANGE_ERROR "L%d: can't pchar, value out of range\n"
 
 /**
  * struct stack_s - doubly linked list representation of a stack(or queue)
@@ -69,7 +71,10 @@ void sub_opcode(stack_t **stack, unsigned int line_number);
 void div_opcode(stack_t **stack, unsigned int line_number);
 void mul_opcode(stack_t **stack, unsigned int line_number);
 void mod_opcode(stack_t **stack, unsigned int line_number);
-
+void pchar_opcode(stack_t **stack, unsigned int line_number);
+void pstr_opcode(stack_t **stack, unsigned int line_number);
+void rotl_opcode(stack_t **stack, unsigned int line_number);
+void rotr_opcode(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
 
 #endif
